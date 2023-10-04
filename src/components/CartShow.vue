@@ -10,7 +10,7 @@ const storeCounter = useCounterStore()
     <div class="outcon">
         <div class="maincontainer mt-3">
             <div class="carthead">
-                <h2>ตะกร้าสินค้าของคุณ</h2>
+                <h2>ตะกร้าสินค้า</h2>
             </div>
 
             <div class="bd-example">
@@ -126,13 +126,16 @@ const storeCounter = useCounterStore()
 .carthead{
     text-align: center;
     margin-bottom: 2%;
+    color: rgb(11, 34, 57);
 }
 
 .billhead{
+    color: rgb(11, 34, 57);
     text-align: center;
 }
 
 .detailbill{
+    color: rgb(11, 34, 57);
     text-align:left;
     font-size: larger;
 }

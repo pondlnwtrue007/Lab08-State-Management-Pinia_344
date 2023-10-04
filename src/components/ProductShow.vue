@@ -1,5 +1,5 @@
 <template>
-  <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" width="100vw">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" width="100vw">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="https://legendary-sfogliatella-22b1d4.netlify.app/img/slide1.png" class="d-block w-100" alt="Image 1">
@@ -21,36 +21,37 @@
             <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
             <li data-bs-target="#myCarousel" data-bs-slide-to="1" class="active"></li>
         </ol>
-    </div> -->
+    </div>
 
-  <div class="row row-cols-5 mt-3" style="width: 95%; margin: auto;">
-    <div class="col mb-4" v-for="index in 10" :key="index">
-      <div class="card" >
-        <div class="card-body">
-          <div class="imgcon" style="display: flex;">
-            <img src="@/assets/product-mockup.png" alt="" style="margin: auto; width: 100%; border-radius: 10px;">
-          </div>
-          <h6 class="card-title mt-3">Special title treatment</h6>
-          <p class="card-text" style="font-size: 1.7ch;">description</p>
-          <div class="panelbuttcon">
-            <div class="buttcon" >
-              <div class="input-group mb-2">
-                <span class="input-group-text quatitybuttbgminus"><button class="quatitybutt" @click="storeCounter.decrement"><img class="imgbutt" src="@/assets/minus.png" alt=""></button></span>
-                <input class="form-control no-spinners" type="number" v-model="storeCounter.counter" style="text-align: center; font-size: smaller;" min="0">
-                <span class="input-group-text quatitybuttbgplus"><button class="quatitybutt" @click="storeCounter.increment"><img class="imgbutt" src="@/assets/plus.png" alt=""></button></span>
-              </div>  
+    <div class="row row-cols-5 mt-3" style="width: 95%; margin: auto;">
+      <div class="col mb-4" v-for="index in 10" :key="index">
+        <div class="card cardframe" >
+          <img src="@/assets/1Skyarc.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h6 class="card-title mt-3" style="  color: rgb(11, 34, 57);">Special title treatment</h6>
+            <p class="card-text" style="font-size: 1.7ch;   color: rgb(11, 34, 57);">description</p>
+            <div class="pricetag">
+                <p style="  color: rgb(11, 34, 57);">฿234.00</p>
+              </div>
+            <div class="panelbuttcon">
+              <div class="buttcon" >
+                <div class="input-group mb-2">
+                  <span class="input-group-text quatitybuttbgminus"><button class="quatitybutt" @click="storeCounter.decrement"><img class="imgbutt" src="@/assets/minus.png" alt=""></button></span>
+                  <input class="form-control no-spinners" type="number" v-model="storeCounter.counter" style="text-align: center; font-size: smaller;   color: rgb(11, 34, 57);" min="0">
+                  <span class="input-group-text quatitybuttbgplus"><button class="quatitybutt" @click="storeCounter.increment"><img class="imgbutt" src="@/assets/plus.png" alt=""></button></span>
+                </div>  
+              </div>
             </div>
-          </div>
-          <div class="panelbuttcon">
-            <button type="button" class="btn btn-success" style="margin: auto; margin-bottom: 1%;">เพิ่มลงในตะกร้า</button>
-          </div>
-          <div class="panelbuttcon">
-            <RouterLink to="/cart" class="btn btn-primary" style="margin: auto; width: 100%;">เพิ่มเติม</RouterLink>
+            <div class="panelbuttcon">
+              <button type="button" class="btn btn-success" style="margin: auto; margin-bottom: 1%;">เพิ่มลงในตะกร้า</button>
+            </div>
+            <div class="panelbuttcon">
+              <RouterLink to="/product" class="btn btn-primary" style="margin: auto; width: 100%;">เพิ่มเติม</RouterLink>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
 
@@ -77,6 +78,10 @@ const storeCounter = useCounterStore()
 body{
   margin: 0%;
   padding: 0%;
+}
+
+.cardframe:hover{
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 .panelbuttcon{
   display: flex;
