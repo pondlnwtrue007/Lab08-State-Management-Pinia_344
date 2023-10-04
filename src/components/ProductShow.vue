@@ -28,7 +28,7 @@
         <div class="card cardframe" >
           <img src="@/assets/1Skyarc.png" class="card-img-top" alt="">
           <div class="card-body">
-            <h6 class="card-title mt-3" style="  color: rgb(11, 34, 57);">Special title treatment</h6>
+            <h6 class="card-title mt-3" style=" color: rgb(11, 34, 57);">Special title treatment</h6>
             <p class="card-text" style="font-size: 1.7ch;   color: rgb(11, 34, 57);">description</p>
             <div class="pricetag">
                 <p style="  color: rgb(11, 34, 57);">฿234.00</p>
