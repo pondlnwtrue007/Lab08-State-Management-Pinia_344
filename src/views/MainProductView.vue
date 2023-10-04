@@ -4,9 +4,9 @@ import ProductShow from '../components/ProductShow.vue';
 </script>
 
 <template>
-  <main>
-    <ProductShow />
-  </main>
+
+  <ProductShow />
+
 </template>
 
 <style>

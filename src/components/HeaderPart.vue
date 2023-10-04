@@ -1,3 +1,9 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+
+
+</script>
+
 <template>
     <header class="d-flex flex-wrap justify-content-center py-3" style="width: 100%;  background-color: rgb(11, 34, 57);">
         <RouterLink to="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -6,16 +12,16 @@
         </RouterLink>
         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small ">
                 <li>
-                <a href="#" class="nav-link text-white"> 
+                <RouterLink to="/cart" class="nav-link text-white"> 
                     <img class="bi d-block mx-auto mb-1" src="@/assets/cart.png" alt="cart" width="24" height="24" >
-                    Cart  
-                </a>
+                    ตะกร้า  
+                </RouterLink>
                 </li>
                 <li>
-                <a href="#" class="nav-link text-white">
+                <RouterLink to="/historyorder" class="nav-link text-white">
                     <img class="bi d-block mx-auto mb-1" src="@/assets/Order.png" alt="cart" width="24" height="24" >
-                    Orders
-                </a>
+                    รายการสั่งซื้อ
+                </RouterLink>
                 </li>
             </ul>
     </header>

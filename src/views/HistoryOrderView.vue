@@ -1,11 +1,11 @@
 <script setup>
-import CartShow from '../components/CartShow.vue';
+import HistoryOrderShow from '../components/HistoryOrderShow.vue';
 
 </script>
 
 <template>
 
-  <CartShow />
+    <HistoryOrderShow/>
 
 </template>
 

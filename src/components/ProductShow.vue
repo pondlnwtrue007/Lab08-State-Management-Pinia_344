@@ -42,10 +42,10 @@
             </div>
           </div>
           <div class="panelbuttcon">
-            <button type="button" class="btn btn-success" style="margin: auto; margin-bottom: 1%;">Add to Cart</button>
+            <button type="button" class="btn btn-success" style="margin: auto; margin-bottom: 1%;">เพิ่มลงในตะกร้า</button>
           </div>
           <div class="panelbuttcon">
-            <RouterLink to="/cart" class="btn btn-primary" style="margin: auto; width: 100%;">Go somewhere</RouterLink>
+            <RouterLink to="/cart" class="btn btn-primary" style="margin: auto; width: 100%;">เพิ่มเติม</RouterLink>
           </div>
         </div>
       </div>
