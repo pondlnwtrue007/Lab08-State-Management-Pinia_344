@@ -19,7 +19,7 @@ import { RouterLink } from 'vue-router';
                 </li>
                 <li>
                 <RouterLink to="/historyorder" class="nav-link text-white">
-                    <img class="bi d-block mx-auto mb-1" src="@/assets/Order.png" alt="cart" width="24" height="24" >
+                    <img class="bi d-block mx-auto mb-1" src="@/assets/order.png" alt="cart" width="24" height="24" >
                     รายการสั่งซื้อ
                 </RouterLink>
                 </li>
