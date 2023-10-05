@@ -13,7 +13,7 @@ const router = createRouter({
       component: MainProductView
     },
     {
-      path: '/product/',
+      path: '/product/:id',
       name: 'productDetail',
       component: ProductDetailView
     },

@@ -1,8 +1,6 @@
 <script setup>
-import  { useCounterStore } from '@/stores/products'
-
-
-const storeCounter = useCounterStore()
+import  { useProductStore } from '@/stores/products'
+const storeProduct = useProductStore()
 
 </script>
 
@@ -40,9 +38,9 @@ const storeCounter = useCounterStore()
                         <div class="buttcon" >
                         <div class="butsemicon">
                         <div class="input-group mb-2">
-                            <span class="input-group-text quatitybuttbgminus"><button class="quatitybutt" @click="storeCounter.decrement"><img class="imgbutt" src="@/assets/minus.png" alt="minus"></button></span>
-                            <input class="form-control no-spinners" type="number" v-model="storeCounter.counter" style="text-align: center; font-size: smaller;" min="0">
-                            <span class="input-group-text quatitybuttbgplus"><button class="quatitybutt" @click="storeCounter.increment"><img class="imgbutt" src="@/assets/plus.png" alt="minus"></button></span>
+                            <span class="input-group-text quatitybuttbgminus"><button class="quatitybutt" @click="storeProduct.decrement"><img class="imgbutt" src="@/assets/minus.png" alt="minus"></button></span>
+                            <input class="form-control no-spinners" type="number" v-model="storeProduct.counter" style="text-align: center; font-size: smaller;" min="0">
+                            <span class="input-group-text quatitybuttbgplus"><button class="quatitybutt" @click="storeProduct.increment"><img class="imgbutt" src="@/assets/plus.png" alt="minus"></button></span>
                         </div>
                         </div> 
                         </div>

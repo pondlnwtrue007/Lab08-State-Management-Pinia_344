@@ -1,11 +1,27 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+import  { useProductStore } from '@/stores/products'
+const storeProduct = useProductStore()
+
+const addToCart = (productData) => {
+  storeProduct.addToCart({
+    id: productData.id,
+    Name: productData.Name,
+    Price: productData.Price,
+    img: productData.img,
+    quatity: productData.quatity,
+  });
+};
+</script>
+
 <template>
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" width="100vw">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://legendary-sfogliatella-22b1d4.netlify.app/img/slide1.png" class="d-block w-100" alt="Image 1">
+                <img src="@/assets/slide1.png" class="d-block w-100" alt="Image 1">
             </div>
             <div class="carousel-item">
-                <img src="https://legendary-sfogliatella-22b1d4.netlify.app/img/slide2.png" class="d-block w-100" alt="Image 2">
+                <img src="@/assets/slide2.png" class="d-block w-100" alt="Image 2">
             </div>
         </div>
 
@@ -24,29 +40,38 @@
     </div>
 
     <div class="row row-cols-5 mt-3" style="width: 95%; margin: auto;">
-      <div class="col mb-4" v-for="index in 10" :key="index">
+      <div class="col mb-4" v-for="(productData, index) in storeProduct.productsList" :key="index">
         <div class="card cardframe" >
-          <img src="@/assets/1Skyarc.png" class="card-img-top" alt="">
+          <img :src="productData.img" class="card-img-top" alt="productImg">
           <div class="card-body">
-            <h6 class="card-title mt-3" style=" color: rgb(11, 34, 57);">Special title treatment</h6>
-            <p class="card-text" style="font-size: 1.7ch;   color: rgb(11, 34, 57);">description</p>
+            <h6 class="card-title mt-3" style=" color: rgb(11, 34, 57);">{{ productData.Name }}</h6>
             <div class="pricetag">
-                <p style="  color: rgb(11, 34, 57);">฿234.00</p>
+                <p style="  color: rgb(11, 34, 57);">{{ productData.Price }}</p>
               </div>
             <div class="panelbuttcon">
-              <div class="buttcon" >
-                <div class="input-group mb-2">
-                  <span class="input-group-text quatitybuttbgminus"><button class="quatitybutt" @click="storeCounter.decrement"><img class="imgbutt" src="@/assets/minus.png" alt=""></button></span>
-                  <input class="form-control no-spinners" type="number" v-model="storeCounter.counter" style="text-align: center; font-size: smaller;   color: rgb(11, 34, 57);" min="0">
-                  <span class="input-group-text quatitybuttbgplus"><button class="quatitybutt" @click="storeCounter.increment"><img class="imgbutt" src="@/assets/plus.png" alt=""></button></span>
-                </div>  
+              <div class="panelbuttcon">
+                <div class="buttcon">
+                  <div class="input-group mb-2">
+                    <span class="input-group-text quatitybuttbgminus">
+                      <button class="quatitybutt" @click="storeProduct.decrementQuantity(productData)">
+                        <img class="imgbutt" src="@/assets/minus.png" alt="">
+                      </button>
+                    </span>
+                    <input class="form-control no-spinners" type="number" v-model="productData.quatity" style="text-align: center; font-size: smaller; color: rgb(11, 34, 57);" min="0">
+                    <span class="input-group-text quatitybuttbgplus">
+                      <button class="quatitybutt" @click="storeProduct.incrementQuantity(productData)">
+                        <img class="imgbutt" src="@/assets/plus.png" alt="">
+                      </button>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="panelbuttcon">
-              <button type="button" class="btn btn-success" style="margin: auto; margin-bottom: 1%;">เพิ่มลงในตะกร้า</button>
+              <button type="button" class="btn btn-success" style="margin: auto; margin-bottom: 1%;"  @click="addToCart(productData)">เพิ่มลงในตะกร้า</button>
             </div>
             <div class="panelbuttcon">
-              <RouterLink to="/product" class="btn btn-primary" style="margin: auto; width: 100%;">เพิ่มเติม</RouterLink>
+              <RouterLink :to="{name: 'productDetail', params: {id: productData.id}}" class="btn btn-primary" style="margin: auto; width: 100%;">เพิ่มเติม</RouterLink>
             </div>
           </div>
         </div>
@@ -54,25 +79,10 @@
     </div>
 
 
-
-
-  
-
-
-
-
-
-
-
-
+    {{ storeProduct.CartList }}
 </template>
 
-<script setup>
-import  { useCounterStore } from '@/stores/products'
-import { RouterLink } from 'vue-router';
 
-const storeCounter = useCounterStore()
-</script>
 
 <style scoped>
 body{
