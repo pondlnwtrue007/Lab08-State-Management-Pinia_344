@@ -8,6 +8,7 @@ const addToCart = (productData) => {
     id: productData.id,
     Name: productData.Name,
     Price: productData.Price,
+    PriceCal: productData.PriceCal,
     img: productData.img,
     quatity: productData.quatity,
   });
@@ -57,7 +58,7 @@ const addToCart = (productData) => {
                         <img class="imgbutt" src="@/assets/minus.png" alt="">
                       </button>
                     </span>
-                    <input class="form-control no-spinners" type="number" v-model="productData.quatity" style="text-align: center; font-size: smaller; color: rgb(11, 34, 57);" min="0">
+                    <input class="form-control no-spinners" type="number" v-model="productData.quatity" style="font-weight: bold; text-align: center; font-size: smaller; color: rgb(11, 34, 57);" min="0">
                     <span class="input-group-text quatitybuttbgplus">
                       <button class="quatitybutt" @click="storeProduct.incrementQuantity(productData)">
                         <img class="imgbutt" src="@/assets/plus.png" alt="">
@@ -71,15 +72,13 @@ const addToCart = (productData) => {
               <button type="button" class="btn btn-success" style="margin: auto; margin-bottom: 1%;"  @click="addToCart(productData)">เพิ่มลงในตะกร้า</button>
             </div>
             <div class="panelbuttcon">
-              <RouterLink :to="{name: 'productDetail', params: {id: productData.id}}" class="btn btn-primary" style="margin: auto; width: 100%;">เพิ่มเติม</RouterLink>
+              <RouterLink :to="{name: 'productDetail', params: {id: productData.id}}" class="btn btn-secondary" style="margin: auto; width: 100%;">เพิ่มเติม</RouterLink>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
-    {{ storeProduct.CartList }}
 </template>
 
 

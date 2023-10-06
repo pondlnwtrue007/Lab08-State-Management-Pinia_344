@@ -1,17 +1,30 @@
 <script setup>
+import  { useProductStore } from '@/stores/products'
+const storeProduct = useProductStore()
+
+
+function formatNumberWithCommas(number) {
+    const formattedNumber = Number(number).toFixed(2);
+    return formattedNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function formatNumberWithCommasonly(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
 
 </script>
 
 <template>
-    <div class="outcon">
-        <div class="maincontainerr mt-3">
+    <div v-if="storeProduct.OrderList.length > 0" class="outcon">
+        <div class="maincontainerr mt-3 mb-3">
             <div class="cartheadd">
                 <h2>ประวัติคำสั่งซื้อ</h2>
             </div>
-            <div class="lateorder">
+            <div class="lateorder mb-3" v-for="(order, index) in storeProduct.OrderList" :key="index">
                 <div class="orderdetail">
                     <div class="orderdetailhead">
-                        <h4>คำสั่งซื้อ #{{ ordernumber }}</h4>
+                        <h4>คำสั่งซื้อ #{{ order.orderNumber }}</h4>
                     </div>
                     <table class="table custom-table"  style="text-align: center; vertical-align: middle;">
                     <thead>
@@ -23,38 +36,43 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr v-for="(product, Index) in order.CartList" :key="Index">
                         <td class="product-grid">
                             <div class="product-image">
-                            <img src="@/assets/product-mockup.png" alt="" style="border-radius: 10px; width: 70%;">
+                            <img :src="product.img" alt="" style="border-radius: 10px; width: 70%;">
                             </div>
                             <div class="product-name">
-                            <span>{{productname}}</span>
+                            <span>{{ product.Name }}</span>
                             </div>
                         </td>
-                        <td>{{productpriceperpiece}}</td>
+                        <td>{{ product.Price }}</td>
                         <td>
-                            {{ quatityofproduct }} 
+                            {{ formatNumberWithCommasonly(product.quatity) }} 
                         </td>
-                        <td>{{totalproductprice}}</td>
+                        <td>{{ formatNumberWithCommas(product.totalProductPrice) }}</td>
                         </tr>
                     </tbody>
                     </table>
                     <div class="priceshow">
-                        <p>รวม : {{ totalprice }} บาท</p>
+                        <p>รวม : {{ formatNumberWithCommas(order.Total) }} บาท</p>
                     </div>
 
                     <div class="customerDetail">
-                       <p>ชื่อผู้รับ : {{ customerName }}</p>
-                       <p>ที่อยู่ : {{ customerAddr }}</p>
-                       <p>เบอร์โทรศัพท์ : {{ customerTel }}</p>
+                       <p>ชื่อผู้รับ : {{ order.name }}</p>
+                       <p>ที่อยู่ : {{ order.address }}</p>
+                       <p>เบอร์โทรศัพท์ : {{ order.phoneNumber }}</p>
                     </div>
                 </div>
-            </div>  
+            </div>
+            <RouterLink to="/" style="text-decoration: none;">
+                <div class="panelbuttcon">
+                    <button type="button" class="btn btn-secondary" style="margin: auto; margin-bottom: 1%; width: 100%;">ช็อปต่อเลย! คลิกที่นี่</button>
+                </div>
+            </RouterLink>  
         </div>
     </div>
 
-    <div class="outcon">
+    <div v-else class="outcon">
         <div class="maincontainerrnull mt-3">
             <div class="cartheadd">
                 <h2>ประวัติคำสั่งซื้อ</h2>
@@ -63,6 +81,11 @@
                 <div class="orderdetailnull">
                     <div class="orderdetailheadnull">
                         <h4>ยังไม่มีคำสั่งซื้อ</h4>
+                        <RouterLink to="/" style="text-decoration: none;">
+                            <div class="panelbuttcon">
+                                <button type="button" class="btn btn-secondary" style="margin: auto; margin-bottom: 1%; width: 100%;">เลือกสินค้าเลย ! กดที่นี่</button>
+                            </div>
+                        </RouterLink>
                     </div>
                 </div>
             </div> 
@@ -138,7 +161,7 @@
 }
 
 .custom-table td {
-  background-color: rgb(236, 236, 236); 
+  background-color: rgb(245, 245, 245); 
   color: #333; 
   border: 1px solid rgb(230, 221, 221);
    
