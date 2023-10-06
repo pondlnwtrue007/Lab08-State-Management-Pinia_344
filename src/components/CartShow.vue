@@ -54,12 +54,12 @@ const placeOrder = () => {
                 </div>
 
                 <div class="bd-example">
-                    <h4 style="color: rgb(255, 255, 255); padding-top: 35vh; padding-bottom: 35vh; text-align: center; background-color: rgb(18, 56, 95); border-radius: 20px;">
-                        ไม่มีสินค้าในตะกร้า
+                    <h4 style="color: rgb(255, 255, 255); padding-top: 35vh; padding-bottom: 35vh; text-align: center; background-color: rgb(255, 131, 76); border-radius: 20px;">
+                        ตะกร้าว่างเปล่า!
                     </h4>
                     <RouterLink to="/" style="text-decoration: none;">
                         <div class="panelbuttcon">
-                            <button type="button" class="btn btn-secondary" style="margin: auto; margin-bottom: 1%; width: 100%;">เลือกสินค้าเลย ! กดที่นี่</button>
+                            <button type="button" class="btn btn-secondary" style="margin: auto; margin-bottom: 1%; width: 100%;">เลือกสินค้าเลย คลิกที่นี่!!!</button>
                         </div>
                     </RouterLink>
                 </div>
@@ -185,7 +185,7 @@ const placeOrder = () => {
     padding:1%;
     width: 90%;
     margin: auto;
-    background-color: white;
+    background-color: rgb(237, 101, 11);
 }
 
 .mainbillcontainer{

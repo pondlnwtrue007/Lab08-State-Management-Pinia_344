@@ -83,7 +83,7 @@ function formatNumberWithCommasonly(number) {
                         <h4>ยังไม่มีคำสั่งซื้อ</h4>
                         <RouterLink to="/" style="text-decoration: none;">
                             <div class="panelbuttcon">
-                                <button type="button" class="btn btn-secondary" style="margin: auto; margin-bottom: 1%; width: 100%;">เลือกสินค้าเลย ! กดที่นี่</button>
+                                <button type="button" class="btn btn-secondary" style="margin: auto; margin-bottom: 1%; width: 100%;">เลือกสินค้าเลย คลิกที่นี่!!!</button>
                             </div>
                         </RouterLink>
                     </div>
@@ -186,7 +186,7 @@ function formatNumberWithCommasonly(number) {
     padding:1%;
     width: 90%;
     margin: auto;
-    background-color: rgb(18, 56, 95);
+    background-color: rgb(255, 131, 76);
 }
 
 .lateordernull{

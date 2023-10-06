@@ -5,10 +5,10 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <header class="d-flex flex-wrap justify-content-center py-3" style="width: 100%;  background-color: rgb(11, 34, 57);">
+    <header class="d-flex flex-wrap justify-content-center py-3" style="width: 100%; background-image: url('src/assets/Topbar.png'); background-size: cover; background-repeat: no-repeat;">
         <RouterLink to="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <svg class="bi me-2" width="50" height="70"></svg>
-        <span class="fs-3" style="color: white; " ><h2>Thonthus Shop</h2></span>
+        <span class="fs-3" style="color: rgb(#CDBFBF); " ><h2> หน้าหลัก</h2></span>
         </RouterLink>
         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small ">
                 <li>
